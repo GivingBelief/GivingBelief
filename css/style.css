@@ -470,6 +470,80 @@ header .dropdown .items .title a:hover
 
 /*endregion*/
 
+.scroll-control {
+    height: 200px;
+    color: #fff;
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.scroll-control li {
+    position: relative;
+    height: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.scroll-control .active .border {
+    border: 1px solid #f66f6a;
+}
+.scroll-control .active .dot {
+    background-color: #f66f6a;
+}
+
+.scroll-control .hover .bg {
+    right: 0;
+    top: -1px;
+    width: 80px;
+    height: 18px;
+    border-radius: 8px;
+}
+
+.scroll-control .border {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    top: -1px;
+    right: 0;
+}
+
+.scroll-control .circle {
+    display: none;
+    height: 16px;
+    width: 50px;
+    padding-right: 20px;
+    font-size: 12px;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    z-index: 2;
+}
+
+.scroll-control .bg,
+.scroll-control .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    right: 4.5px;
+    transition: all .15s;
+}
+
+.scroll-control .bg {
+    background-color: #f66f6a;
+    z-index: 1;
+}
+.scroll-control .dot {
+    background-color: #222;
+    z-index: 2;
+}
+
+
 .swiper-box {
     position: relative;
     width: 100%;

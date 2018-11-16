@@ -1,3 +1,4 @@
+//窗口缩放事件
 $(function() {
     $(window).resize(navResize);
     navResize();
@@ -24,6 +25,42 @@ $(function() {
     }
 });
 
+//侧边圆形按钮
+$(function() {
+    var btn = $('.scroll-control li');
+
+    btn.hover(function() {
+        $(this).addClass('hover')
+            .find('.dot').css('background-color','#fff');
+        setTimeout(function() {
+            $('.scroll-control .hover')
+                .find('.circle').css('display', 'inline-block');
+        },100)
+    }, function() {
+        $(this).removeClass('hover')
+            .find('.circle').css('display', 'none');
+        if ($(this).hasClass('active')) {
+            $(this)
+                .find('.dot').css('background-color','#f66f6a');
+        }else  {
+            $(this)
+                .find('.dot').css('background-color','#222');
+        }
+    });
+
+    btn.click(function() {
+        $(this).addClass('active').siblings().removeClass('active')
+            .find('.dot').css('background-color','#222');
+    });
+
+    btn.each(function() {
+        $(this).click(function() {
+            var scrollTop = $('.swiper-box>div').height();
+            var index = $(this).index();
+            $('body').animate({top: -scrollTop * index},800);
+        })
+    })
+});
 
 //左边侧栏
 $(function() {

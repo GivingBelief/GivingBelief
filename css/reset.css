@@ -8,6 +8,13 @@ table, tr, td, th {
     padding: 0;
 }
 
+body {
+    overflow-y: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
