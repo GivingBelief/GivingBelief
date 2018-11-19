@@ -34,8 +34,10 @@ $(function() {
         //在全新活动板块将导航条设为透明
         if (targetTop !== 0) {
             $('.header').addClass('nav-shadow');
+            $('.scroll-control').css('display','block');
         }else {
             $('.header').removeClass('nav-shadow');
+            $('.scroll-control').css('display','none');
         }
 
     }
@@ -129,6 +131,8 @@ $(function() {
             //更多按钮隐藏
             $('.header .head-nav .nav-list li').eq(-1).css('display','none');
         }
+
+        $('.swiper-box .swiper7').height($(window).height());
     }
     navResize();
 
@@ -182,6 +186,13 @@ $(function() {
            });
         });
 
+    });
+
+    //底部箭头按钮
+    $(function() {
+       $('.page-next').click(function() {
+           bodyScroll('next')
+       });
     });
 
 

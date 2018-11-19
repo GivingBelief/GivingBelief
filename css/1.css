@@ -1,14 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+
 /*头部*/
-#tou{
+.swiper7 #tou{
     width: 100%;
     height: 336px;
 }
-h1{
+.swiper7 #tou h1{
     font-size: 24px;
     line-height: 32px;
     text-align: center;
@@ -17,7 +13,7 @@ h1{
     color: inherit;
     font-weight:inherit  ;
 }
-h2{
+.swiper7 #tou h2{
     margin-top: 5px;
     font-size: 18px;
     line-height: 25px;
@@ -26,14 +22,14 @@ h2{
     text-align: center;
     font-weight:inherit  ;
 }
-#tou .sm {
+.swiper7 #tou .sm {
     width:100%;
     height: 99px;
 
 
 
 }
-.xm{
+.swiper7 #tou .xm{
     width: 100%;
     height: 256px;
 }
