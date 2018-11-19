@@ -1,4 +1,19 @@
 $(function () {
+    //点击点击第三张图片正常运行
+    if($(".computer").width()==675){
+        $(".road-three").click(function () {
+            $(this).animate({
+                width:675
+            }).siblings(".jump").animate({
+                width:172
+            });
+            if($(".road-three").width()==675){
+                $(".jump").animate({
+                    width:0
+                })
+            }
+        });
+    }
     //设置图片的左右伸缩
     $(".jump").each(function () {
         $(this).click(function () {
