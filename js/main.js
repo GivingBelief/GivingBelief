@@ -37,6 +37,7 @@ $(function() {
         }else {
             $('.header').removeClass('nav-shadow');
         }
+
     }
 
     //添加圆形按钮选中样式
@@ -48,7 +49,7 @@ $(function() {
     }
 
     //鼠标滚轮监听事件
-    var scrollFlag = true;
+    var scrollFlag = true;   //禁止连点标志
     function addMouseWheelListener(event) {
         if (scrollFlag === false) {
             return null;
@@ -64,7 +65,9 @@ $(function() {
                 bodyScroll('next', function() {
                     scrollFlag = true;
                 });
+                //找到下一个按钮添加选中样式
                 btnActive = $('.scroll-control li.active').next();
+                //初始状态下直接取第二个按钮
                 if ($('.scroll-control li.active').length === 0) {
                     btnActive = $('.scroll-control li').eq(1);
                 }
@@ -73,6 +76,7 @@ $(function() {
                 bodyScroll('prev', function() {
                     scrollFlag = true;
                 });
+                //找到前一个按钮添加选中样式
                 btnActive = $('.scroll-control li.active').prev();
                 addBtnActive(btnActive);
             }
@@ -84,13 +88,16 @@ $(function() {
                 bodyScroll('prev', function() {
                     scrollFlag = true;
                 });
+                //找到前一个按钮添加选中样式
                 btnActive = $('.scroll-control li.active').prev();
                 addBtnActive(btnActive);
             } else if (wheelDir < 0) {
                 bodyScroll('next', function() {
                     scrollFlag = true;
                 });
+                //找到下一个按钮添加选中样式
                 btnActive = $('.scroll-control li.active').next();
+                //初始状态下直接取第二个按钮
                 if ($('.scroll-control li.active').length === 0) {
                     btnActive = $('.scroll-control li').eq(1);
                 }
@@ -100,8 +107,6 @@ $(function() {
 
 
     }
-
-
 
     //窗口缩放
     function navResize() {
@@ -141,13 +146,10 @@ $(function() {
                 scrollTimer = setTimeout(function() {
                     addMouseWheelListener(e);
                 }, 300);
-
             }
         }else {
             document.addEventListener('DOMMouseScroll', addMouseWheelListener, false);
         }
-
-
 
     });
 
@@ -194,6 +196,7 @@ $(function() {
         //菜单回退
         function reset(ele,type,callBack) {
             var wid = ele.width();
+            //判断类型(静态和动态变化)
             if (type === 'css') {
                 ele.css({
                     'display': 'none',
@@ -209,7 +212,7 @@ $(function() {
             }
         }
 
-        //菜单扩展
+        //菜单扩展动画封装
         function run(ele,callBack) {
             ele.css('display', 'block').stop().animate({left: 0}, 200, function() {
                 if (callBack) callBack()
@@ -226,9 +229,9 @@ $(function() {
             updateListWidth( $('.fir-menu') );
             //显示一级菜单
             run( $('.fir-menu') );
-        },
-            function() {
+        }, function() {
             var currentWidth = $('.menu-list').width();
+            //判断当前鼠标位置,逐级回退菜单
             if (currentWidth > 480) {
                 reset( $('.thi-menu'), 'animate', function() {
                     reset( $('.sec-menu'), 'animate', function() {

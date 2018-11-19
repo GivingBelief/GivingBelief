@@ -43,6 +43,7 @@ header .dropdown .items .title a:hover
     position: fixed;
     top: 0;
     left: 0;
+    transition: all .3s;
 }
 .header.nav-shadow {
     background-color: #222;
@@ -473,6 +474,7 @@ header .dropdown .items .title a:hover
 
 /*endregion*/
 
+/*region 右侧圆形按钮*/
 .scroll-control {
     height: 200px;
     color: #fff;
@@ -545,6 +547,7 @@ header .dropdown .items .title a:hover
     background-color: #222;
     z-index: 2;
 }
+/*endregion*/
 
 
 .swiper-box {
@@ -555,7 +558,7 @@ header .dropdown .items .title a:hover
 
 .swiper1, .swiper2, .swiper3,
 .swiper4, .swiper5, .swiper6,
-.swiper7, .swiper8
+.swiper7
 {
     min-height: 530px;
     width: 100%;
@@ -732,6 +735,253 @@ header .dropdown .items .title a:hover
 }
 
 
+/*endregion*/
+
+/*region 第二块*/
+.swiper2 {
+    width: 100%;
+    min-width: 1024px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: url("../img/homepage-product-bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+/* .title */
+.swiper2 .title,
+.swiper4 .title
+{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    /*background: deeppink;*/
+}
+
+.swiper2 .title h1,
+.swiper4 .title h1
+{
+    padding-top: 46px;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.swiper2 .title h2,
+.swiper4 .title h2
+{
+    margin-top: 5px;
+    font-size: 22px;
+    line-height: 48px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/*  #sec */
+.swiper2 .sec {
+    background: #DBEEF6;
+    padding-top: 60px;
+    box-sizing: border-box;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: relative;*/
+    overflow: hidden;
+}
+
+/*  .product-bg */
+.swiper2 .sec-bg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.swiper2 .bg-top, .bg-middle, .bg-bottom {
+    width: 200%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    animation: one 18s linear infinite;
+}
+
+.swiper2 .sec-bg img {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.swiper2 .bg-middle {
+    animation-delay: 3s;
+}
+
+.swiper2 .bg-bottom {
+    animation-delay: 5s;
+}
+
+@keyframes one {
+    from {
+        left: 0
+    }
+    to {
+        left: -100%;
+    }
+}
+
+/*  .content */
+.swiper2 .sec-content {
+    padding-top: 60px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/*.sec-product*/
+.swiper2 .sec-product {
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    padding: 0 10%;
+}
+
+.swiper2 .sec-product .product-list,
+.swiper2 .sec-product .product-list ul
+{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper2 .sec-product ul li {
+    float: left;
+    width: 33%;
+    height: 25%;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+.swiper2 .product-card {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px 18px 20px;
+    margin-top: 15px;
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.swiper2 .product-card h2 {
+    color: #252b3a;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.swiper2 .product-card:hover {
+    background: #fff;
+    box-shadow: 0 30px 40px 0 rgba(130, 98, 98, 0.1);
+}
+
+.swiper2 .product-card:hover h2 {
+    color: #f66f6a;
+}
+
+.swiper2 .product-tag {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fff;
+    background: #f66f6a;
+    padding: 0 4px;
+    border-radius: 2px;
+    margin-left: 10px;
+}
+
+.swiper2 .product-card h2 span {
+    vertical-align: middle;
+}
+
+.swiper2 .product-text {
+    font-size: 14px;
+    color: #666a75;
+    line-height: 24px;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+}
+
+/*  .more*/
+.swiper2 .more,
+.swiper4 .more,
+.swiper5 .more
+{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.swiper2 .more a,
+.swiper4 .more a,
+.swiper5 .more a
+{
+    font-size: 18px;
+    line-height: 24px;
+    color: #999;
+    transition: 0.5s;
+}
+
+.swiper2 .more a:hover,
+.swiper4 .more a:hover,
+.swiper5 .more a:hover
+{
+    color: #f66f6a;
+}
+
+.swiper2 .icon,
+.swiper4 .icon,
+.swiper5 .icon
+{
+    margin-left: 5px;
+    position: relative;
+}
+
+.swiper2 .page-next,
+.swiper4 .page-next,
+.swiper5 .page-next
+{
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    transform: rotate(135deg);
+    margin: 20px auto;
+    position: relative;
+    animation: down 1s alternate infinite;
+    cursor: pointer;
+}
+
+@keyframes down {
+    from {
+        top: 0;
+    }
+    to {
+        top: -10px;
+    }
+}
+
+.swiper2 .page-next:hover,
+.swiper4 .page-next:hover
+{
+    border-color: #f66f6a;
+    animation-play-state: paused;
+}
 /*endregion*/
 
 /*region 第三块*/
@@ -1141,18 +1391,211 @@ header .dropdown .items .title a:hover
 }
 /*endregion*/
 
+/*region 第四块*/
+.swiper4 {
+    position: relative;
+    overflow: hidden;
+}
+.swiper4 .title {
+    box-sizing: border-box;
+    width: 100%;
+    height: 25%;
+    padding-top: 60px;
+    text-align: center;
+    /*background: deeppink;*/
+}
+
+.swiper4 .title h1 {
+    padding-top: 26px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.swiper4 .title h2 {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.swiper4 .fourth-bg {
+    width: 100%;
+    height: 100%;
+    background: url("../img/homepage-mall-bg.jpg") center top;
+    background-size: 100%;
+    animation: mall-bg 50s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@keyframes mall-bg {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+.swiper4 .fourth-content {
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+    background-color: transparent;
+    position: relative;
+    z-index: 99;
+}
+
+.swiper4 .mall-app {
+    width: 100%;
+    height: 58%;
+}
+
+.swiper4 .mall-app>ul {
+    max-width: 1366px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.swiper4 .mall-app > ul > li {
+    background: grey;
+    float: left;
+    width: 23.4%;
+    height: 100%;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.swiper4 .mall-app-card {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper4 .mall-app-card i {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.swiper4 .mall-bg-img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.swiper4 .mall-app > ul > li:hover .mall-bg-img {
+    transform: scale(1.02)
+}
+
+.swiper4 .mall-logo {
+    width: 100%;
+    height: 100%;
+    /*background: #ff4400;*/
+}
+
+.swiper4 .mall-app-card > h2 {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 130px;
+
+}
+
+.swiper4 .mall-app-card .line {
+    width: 0;
+    height: 4px;
+    background: #f66f6a;
+    margin: 0 auto;
+    position: absolute;
+    top: 165px;
+    left: 0;
+    right: 0;
+    transition: width 0.2s linear;
+}
+
+.swiper4 .mall-app-card > p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #fff;
+    position: absolute;
+    top: 130px;
+    text-align: center;
+    opacity: 0;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.swiper4 .mall-app-card-bottom {
+    height: 50%;
+    line-height: 18px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.swiper4 .mall-app-card-bottom > ul {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.swiper4 .mall-app-card-bottom a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.swiper4 .mall-app-card-bottom > ul > li {
+    line-height: 30px;
+
+}
+
+.swiper4 .mall-app-card-bottom > ul > li > a:hover {
+    color: #f66f6a
+}
+
+.swiper4 .fourth .more {
+    padding-top: 25px;
+}
+/*endregion*/
+
 /*region 第五块*/
 .swiper5 {
     min-width: 1024px;
+}
+
+.swiper5 .bg {
+    width: 100%;
+    height: 100%;
     background: url("../img/homepage-news-bg.jpg") no-repeat;
-    background-size: 100% 100%;
-    /*overflow: hidden;*/
-    /*text-align: center;*/
+    background-size: cover;
 }
 
 .fresh {
     min-width: 1024px;
-    /*background-color: #f00;*/
+    height: 25%;
+    padding-top: 80px;
+    box-sizing: border-box;
     text-align: center;
 
 }
@@ -1160,7 +1603,6 @@ header .dropdown .items .title a:hover
 .fresh .fresh-p1 {
     font-size: 30px;
     margin-bottom: 15px;
-    padding-top: 100px;
 }
 
 .fresh .fresh-p2 {
@@ -1168,19 +1610,19 @@ header .dropdown .items .title a:hover
 }
 
 .swiper5 .news {
-    width: 1320px;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    overflow: hidden;
-    margin: auto;
-
+    min-width: 1024px;
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    padding: 0 5%;
 }
 
 .authority {
     float: left;
     margin-left: 50px;
     cursor: pointer;
-    width: 500px;
+    width: 35%;
+    height: 100%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
     transition: box-shadow .3s;
 }
@@ -1190,7 +1632,7 @@ header .dropdown .items .title a:hover
 
 .authority .blue-img {
     width: 100%;
-    height: 280px;
+    height: 70%;
     overflow: hidden;
     position: relative;
 }
@@ -1200,8 +1642,9 @@ header .dropdown .items .title a:hover
     height: 45px;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.3);
-    top: 115px;
-    left: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     z-index: 998;
     border-radius: 5px;
     transition: all .3s;
@@ -1223,6 +1666,8 @@ header .dropdown .items .title a:hover
 
 .authority .blue-img img {
     transition: 0.3s;
+    width: 100%;
+    height: 100%;
 }
 
 .authority .blue-img:hover img {
@@ -1230,14 +1675,16 @@ header .dropdown .items .title a:hover
 }
 
 .authority .notice {
+    box-sizing: border-box;
+    padding:20px;
     width: 100%;
-    height: 100px;
+    height: 30%;
     background-color: #fff;
 }
 
 .authority .notice .notice-p1 {
     font-size: 20px;
-    margin-left: 20px;
+
 }
 
 .authority .notice .notice-p1 .span1 {
@@ -1246,27 +1693,25 @@ header .dropdown .items .title a:hover
 
 .authority .notice .notice-p2 {
     margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 15px;
+    font-size: 13px;
 }
 
 .authority .notice .notice-p2 span img {
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 .letter {
     float: left;
-    width: 720px;
-    height: 380px;
-    margin-left: 15px;
+    width: 50%;
+    height: 100%;
+    margin-left: 50px;
     cursor: pointer;
 }
 
 .letter .letter-one {
-    height: 90px;
+    height: 33%;
+    box-sizing: border-box;
     padding: 20px;
 }
 
@@ -1291,6 +1736,7 @@ header .dropdown .items .title a:hover
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    padding: 10px 0;
 }
 
 .letter .enter {
@@ -1341,7 +1787,9 @@ header .dropdown .items .title a:hover
 
 .foot-p {
     text-align: center;
-    margin-top: 8px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
 }
 
 .foot-p span {
@@ -1569,6 +2017,33 @@ header .dropdown .items .title a:hover
     .swiper1 .banner-push {
         bottom: 40px;
     }
+
+    .swiper2 .sec-product ul li {
+        height: 33%;
+    }
+    .swiper2 .sec-product ul .none {
+        display: none;
+    }
+
+    .swiper3 .face-p1 {
+        font-size: 30px;
+        padding-top: 75px;
+    }
+
+    .swiper5 .fresh .fresh-p1 {
+        padding-top: 80px;
+        margin-bottom: 0;
+    }
+    .swiper5 .letter .enter {
+        display: none;
+    }
+    .swiper5 .notice {
+        padding: 10px;
+    }
+    .swiper5 .notice .notice-p1 {
+        font-size: 16px;
+    }
+
     .swiper6 .content .title {
         padding-top: 60px;
     }
@@ -1594,11 +2069,22 @@ header .dropdown .items .title a:hover
     .swiper1 .banner-push a p {
         font-size: 12px;
     }
+
+    .swiper4 .mall-app > ul {
+        width: 90%;
+    }
+    .swiper4 .mall-app > ul > li {
+        margin-right: 10px;
+    }
+    .swiper4 .mall-app-card-bottom a {
+        font-size: 12px;
+    }
+
     .swiper5 .letter .enter {
         display: none;
     }
-    .swiper5 .letter .letter-one span {
-        white-space: normal;
-        text-overflow: unset;
-    }
+    /*.swiper5 .letter .letter-one span {*/
+        /*white-space: normal;*/
+        /*text-overflow: unset;*/
+    /*}*/
 }
