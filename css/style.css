@@ -1101,39 +1101,48 @@ header .dropdown .items .title a:hover
 }
 
 .jump .ear h3 {
+    width: 675px;
     top: 0
 }
 
 .jump .ear .mine {
+    width: 675px;
     top: 20px
 }
 
 .jump .ear .boom {
+    width: 675px;
     top: 70px
 }
 
 .jump .ear .recommend {
+    width: 675px;
     bottom: -145px
 }
 
 .jump .ear .lamp {
+    width: 675px;
     bottom: -185px;
     font-size: 15px;
 }
 
 .clear .first .outs {
+    width: 675px;
     margin-top: 30px;
 }
 
 .clear .first .xvast {
+    width: 675px;
     margin-top: 20px;
 }
 
 .clear .first .teamp {
+    width: 675px;
     margin-top: 10px;
 }
 
 .clear .first .teamp a {
+    width: 675px;
     text-decoration: none;
     font-size: 15px;
     color: #fff;
