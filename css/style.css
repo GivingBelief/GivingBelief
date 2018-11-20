@@ -1613,7 +1613,7 @@ header .dropdown .items .title a:hover
 .fresh {
     min-width: 1024px;
     height: 25%;
-    padding-top: 80px;
+    padding-top: 60px;
     box-sizing: border-box;
     text-align: center;
 
@@ -1622,6 +1622,7 @@ header .dropdown .items .title a:hover
 .fresh .fresh-p1 {
     font-size: 30px;
     margin-bottom: 15px;
+    padding-top: 10px;
 }
 
 .fresh .fresh-p2 {
@@ -2465,8 +2466,14 @@ header .dropdown .items .title a:hover
         padding-top: 75px;
     }
 
+    .swiper4 .title h1 {
+        padding-top: 0;
+    }
+
+    .swiper5 .fresh {
+        height: 32%;
+    }
     .swiper5 .fresh .fresh-p1 {
-        padding-top: 80px;
         margin-bottom: 0;
     }
     .swiper5 .letter .enter {
@@ -2483,16 +2490,13 @@ header .dropdown .items .title a:hover
         padding-top: 60px;
     }
     .swiper6 .content .title .fir-title {
+        padding-top: 20px;
         font-size: 24px;
         line-height: 32px;
     }
 }
 
 @media screen and (max-width: 1366px) {
-    .swiper1 .banner-bg .video video {
-        width: 100%;
-        height: 100%;
-    }
     .swiper1 .banner-btn {
         bottom: 260px;
     }
