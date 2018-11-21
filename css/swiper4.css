@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/*region 第四块*/
+.swiper4 {
+    position: relative;
+    overflow: hidden;
+}
+.swiper4 .title {
+    box-sizing: border-box;
+    width: 100%;
+    height: 25%;
+    padding-top: 80px;
+    text-align: center;
+    /*background: deeppink;*/
+}
+
+.swiper4 .title h1 {
+    padding-top: 26px;
+    font-size: 36px;
+    line-height: 32px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.swiper4 .title h2 {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.swiper4 .fourth-bg {
+    width: 100%;
+    height: 100%;
+    background: url("../img/homepage-mall-bg.jpg") center top;
+    background-size: 100%;
+    animation: mall-bg 50s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@keyframes mall-bg {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+.swiper4 .fourth-content {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    position: relative;
+    z-index: 99;
+}
+
+.swiper4 .mall-app {
+    padding-top: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 58%;
+}
+
+.swiper4 .mall-app>ul {
+    max-width: 1366px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.swiper4 .mall-app > ul > li {
+    background: grey;
+    float: left;
+    width: 23.4%;
+    height: 100%;
+    margin-right: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.swiper4 .mall-app-card {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper4 .mall-app-card i {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.swiper4 .mall-bg-img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.swiper4 .mall-app > ul > li:hover .mall-bg-img {
+    transform: scale(1.02)
+}
+
+.swiper4 .mall-logo {
+    width: 100%;
+    height: 100%;
+    /*background: #ff4400;*/
+}
+
+.swiper4 .mall-app-card > h2 {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 130px;
+
+}
+
+.swiper4 .mall-app-card .line {
+    width: 0;
+    height: 4px;
+    background: #f66f6a;
+    margin: 0 auto;
+    position: absolute;
+    top: 165px;
+    left: 0;
+    right: 0;
+    transition: width 0.2s linear;
+}
+
+.swiper4 .mall-app-card > p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    position: absolute;
+    top: 130px;
+    text-align: center;
+    opacity: 0;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.swiper4 .mall-app-card-bottom {
+    height: 50%;
+    line-height: 18px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.swiper4 .mall-app-card-bottom > ul {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.swiper4 .mall-app-card-bottom a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.swiper4 .mall-app-card-bottom > ul > li {
+    line-height: 30px;
+
+}
+
+.swiper4 .mall-app-card-bottom > ul > li > a:hover {
+    color: #f66f6a
+}
+
+.swiper4 .fourth .more {
+    padding-top: 25px;
+}
+/*endregion*/

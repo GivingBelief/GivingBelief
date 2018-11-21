@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+/*region 第一块*/
+
+.swiper1 .banner-bg {
+    width: 100%;
+    height: 100%;
+    background: transparent url("../img/banner-bg.jpg");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.swiper1 .banner-bg .video {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper1 .banner-bg .video video {
+    width: 100%;
+    transition: all .3s;
+}
+
+.swiper1 .banner-bg .bg-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.swiper1 .banner-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 200px;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.swiper1 .banner-btn li {
+    display: inline-block;
+    width: 32px;
+    height: 4px;
+    line-height: 16px;
+    margin: 0 7px;
+    float: left;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.4);
+    position: relative;
+}
+.swiper1 .banner-btn li .val {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    background-color: #f66f6a;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.swiper1 .banner-btn li:hover {
+    background-color: rgba(255,255,255,.8);
+}
+
+.swiper1 .banner-title {
+    width: 550px;
+    height: 156px;
+    position: absolute;
+    top: 40%;
+    left: 143px;
+    transform: translateY(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.swiper1 .banner-title .title:nth-child(1) {
+    display: block;
+    top: 0;
+}
+
+.swiper1 .banner-title .title {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    position: absolute;
+    top: 156px;
+    left: 0;
+    display: none;
+}
+.swiper1 .banner-title .title h2 {
+    font-size: 44px;
+}
+.swiper1 .banner-title .title p {
+    font-size: 16px;
+    margin: 20px 0 10px 0;
+    height: 20px;
+    line-height: 20px;
+}
+.swiper1 .banner-title .title .btn {
+    color: #fff;
+    background-color: #f66f6a;
+    border-radius: 2px;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 38px;
+}
+
+
+.swiper1 .banner-push {
+    max-width: 1440px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 84px;
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+}
+.swiper1 .banner-push li {
+    float: left;
+    width: 24%;
+    border-right: 1px solid rgba(255,255,255,.25);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.swiper1 .banner-push li:last-child {
+    border-right: none;
+}
+.swiper1 .banner-push li:hover h3 {
+    color: #f66f6a;
+}
+.swiper1 .banner-push a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px 60px;
+    text-align: left;
+    color: #fff;
+}
+
+.swiper1 .banner-push a h3 {
+    font-size: 20px;
+    line-height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 3px;
+    transition: 0.2s;
+}
+
+.swiper1 .banner-push a p {
+    width: 100%;
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 3px;
+    transition: 0.2s;
+}
+.swiper1 .next-arrow,
+.swiper6 .next-arrow
+{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+
+/*endregion*/

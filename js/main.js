@@ -195,6 +195,14 @@ $(function() {
        });
     });
 
+    //右边服务栏
+    $(function () {
+        $('#bar').mouseenter(function () {
+            $(this).find('.mask').stop().fadeIn(500)
+        }).mouseleave(function () {
+            $(this).find('.mask').stop().fadeOut(500)
+        });
+    });
 
     //左边侧栏
     $(function() {

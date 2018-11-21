@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+
+@media screen and (max-height: 530px) {
+    .swiper1 .banner-btn {
+        bottom: 160px;
+    }
+    .swiper1 .banner-push {
+        bottom: 40px;
+    }
+
+    .swiper2 .sec-product ul li {
+        height: 33%;
+    }
+    .swiper2 .sec-product ul .none {
+        display: none;
+    }
+
+    .swiper3 .face-p1 {
+        font-size: 30px;
+        padding-top: 75px;
+    }
+
+    .swiper4 .title h1 {
+        padding-top: 0;
+    }
+
+    .swiper5 .fresh {
+        height: 32%;
+    }
+    .swiper5 .fresh .fresh-p1 {
+        margin-bottom: 0;
+    }
+    .swiper5 .letter .enter {
+        display: none;
+    }
+    .swiper5 .notice {
+        padding: 10px;
+    }
+    .swiper5 .notice .notice-p1 {
+        font-size: 16px;
+    }
+
+    .swiper6 .content .title {
+        padding-top: 60px;
+    }
+    .swiper6 .content .title .fir-title {
+        padding-top: 20px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .swiper1 .banner-btn {
+        bottom: 260px;
+    }
+    .swiper1 .banner-push {
+        bottom: 140px;
+    }
+    .swiper1 .banner-push a {
+        padding: 10px 20px;
+    }
+    .swiper1 .banner-push a h3 {
+        font-size: 14px;
+    }
+    .swiper1 .banner-push a p {
+        font-size: 12px;
+    }
+
+    .swiper2 .product-card h2 {
+        font-size: 20px;
+    }
+
+    .swiper4 .mall-app > ul {
+        width: 90%;
+    }
+    .swiper4 .mall-app > ul > li {
+        margin-right: 10px;
+    }
+    .swiper4 .mall-app-card-bottom a {
+        font-size: 12px;
+    }
+    .swiper4 .mall-app-card > p {
+        font-size: 12px;
+    }
+
+    .swiper5 .letter .enter {
+        display: none;
+    }
+    /*.swiper5 .letter .letter-one span {*/
+    /*white-space: normal;*/
+    /*text-overflow: unset;*/
+    /*}*/
+
+    .swiper7 #zho .zho_xiang {
+        height: 130px;
+        text-align: center;
+    }
+    .swiper7 #zho .zho_xiang ul>li img {
+        display: block;
+        width: 100%;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+    .swiper7 #zho .zho_xiang .content {
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+    .swiper7 #zho .zho_xiang ul>li a h2{
+        font-size: 18px;
+        color: #fff;
+    }
+    .swiper7 .wei_xiang .da_1 {
+        float: right;
+    }
+    .swiper7 .wei_xiang .da_2 {
+        float: left;
+    }
+    .swiper7 .footer-record {
+        float: left;
+    }
+}

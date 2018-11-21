@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/*region 第六块*/
+
+.swiper6 .bg {
+    padding-top: 60px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: url("../img/homepage-map-pc.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.swiper6 .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiper6 .content .title {
+    box-sizing: border-box;
+    padding-top: 100px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiper6 .content .title .fir-title {
+    font-size: 36px;
+    line-height: 50px;
+    letter-spacing: 4px;
+}
+
+.swiper6 .content .title .sec-title {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+.swiper6 .content .map {
+    color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 75%;
+    min-height: 480px;
+    padding: 0 150px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.swiper6 .content .map .map-bg {
+    margin-top: 80px;
+    width: 100%;
+    height: 72%;
+    background: url("../img/homepage-map-pc-1.png") no-repeat top center;
+    background-size: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.swiper6 .content .map .area-box {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+.swiper6 .content .map .area {
+    display: inline-block;
+    color: #fff;
+    width: 35px;
+    height: 54px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s;
+}
+.swiper6 .content .map .area>a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.swiper6 .content .map .scale {
+    transform: scale(1.1);
+}
+
+.swiper6 .content .map .area>span {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    position: relative;
+    top: -35px;
+    left: -35px;
+    z-index: 1;
+}
+.swiper6 .content .map .area>span.pr {
+    left: 35px;
+}
+
+.swiper6 .content .map .des {
+    display: none;
+    opacity: 0;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    background: url("../img/homepage-map-icon-new.png") no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    margin-left: -270px;
+    margin-top: -47px;
+}
+
+/*针对个别进行微调*/
+.swiper6 .content .map .des.russia {
+    margin-left: -348px;
+}
+.swiper6 .content .map .des.singapore {
+    margin-left: -373px;
+}
+.swiper6 .content .map .des.europe {
+    margin-left: -333px;
+}
+
+
+.swiper6 .content .map .des::before {
+    content: "";
+    display: inline-block;
+    width: 66px;
+    height: 40px;
+    background: url("../img/homepage-map-icon-new-1.png") no-repeat -35px 0;
+    position: absolute;
+    top: 40px;
+    right: -51px;
+}
+
+.swiper6 .content .map .des.dr {
+    margin-left: 73px;
+    margin-top: -37px;
+}
+.swiper6 .content .map .des.dr::before {
+    background-position: -119px 0;
+    top: 30px;
+    left: -50px;
+}
+.swiper6 .content .map .des h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+.swiper6 .content .map .des p {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.swiper6 .content .map .opened {
+    display: inline-block;
+    width: 35px;
+    height: 54px;
+    background: url("../img/homepage-map-icon-2.png") no-repeat 0 0;
+}
+
+.swiper6 .content .map .coming {
+    display: inline-block;
+    width: 35px;
+    height: 54px;
+    background: url("../img/homepage-map-icon-2.png") no-repeat -35px 0;
+}
+
+.swiper6 .content .map .intro {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper6 .content .map .intro span {
+    position: relative;
+    top: -18px;
+    left: 5px;
+    font-size: 14px;
+}
+
+
+/*endregion*/
