@@ -105,10 +105,13 @@ $(function() {
             'z-index': 1
         }
     ];
+    var mark = $('.swiper6 .content .map .area');
+    var des = $('.swiper6 .content .map .des');
+
     //设置每一个坐标
     $.each(arrArea, function(i, style) {
-        $('.swiper6 .content .map .area').eq(i).css(style);
-        $('.swiper6 .content .map .des').eq(i).css(style).css('z-index',3);
+        mark.eq(i).css(style);
+        des.eq(i).css(style).css('z-index',3);
 
     });
 
@@ -130,8 +133,6 @@ $(function() {
         mapBox.height(boxHeight);
     }
 
-    var mark = $('.swiper6 .content .map .area');
-    var des = $('.swiper6 .content .map .des');
     var timer;
     mark.each(function(i, ele) {
         var zIndex = $(ele).css('z-index');

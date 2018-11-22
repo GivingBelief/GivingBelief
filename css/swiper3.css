@@ -259,8 +259,9 @@
 
 .main .road-four .above span {
     position: absolute;
-    left: 60px;
+    left: 50%;
     top: 180px;
+    transform: translateX(-50%);
 }
 
 .oul .road-four {

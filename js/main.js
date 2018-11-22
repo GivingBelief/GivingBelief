@@ -1,6 +1,5 @@
 $(function() {
 
-
     /**
      * 页面滚动动画封装
      * @param count 要滚动的个数
@@ -51,62 +50,39 @@ $(function() {
     }
 
     //鼠标滚轮监听事件
-    var scrollFlag = true;   //禁止连点标志
+    var scrollFlag = true;   //禁止连续操作标志
     function addMouseWheelListener(event) {
         if (scrollFlag === false) {
             return null;
         }
         scrollFlag = false;
         var e = event || window.event;
-        var wheelDir;
+        // var wheelDir;
         var btnActive;
         //谷歌和火狐
-        if (e.deltaY || e.detail) {
-            wheelDir = e.deltaY || e.detail;
-            if (wheelDir > 0) {
-                bodyScroll('next', function() {
-                    scrollFlag = true;
-                });
-                //找到下一个按钮添加选中样式
-                btnActive = $('.scroll-control li.active').next();
-                //初始状态下直接取第二个按钮
-                if ($('.scroll-control li.active').length === 0) {
-                    btnActive = $('.scroll-control li').eq(1);
-                }
-                addBtnActive(btnActive);
-            } else if (wheelDir < 0) {
-                bodyScroll('prev', function() {
-                    scrollFlag = true;
-                });
-                //找到前一个按钮添加选中样式
-                btnActive = $('.scroll-control li.active').prev();
-                addBtnActive(btnActive);
-            }
-        }
+        var wheelDir = e.deltaY || e.detail;
+        //IE
+        var wheelDirIE = e.wheelDelta;
         //IE的值判断相反
-        else if (e.wheelDelta) {
-            wheelDir = e.wheelDelta;
-            if (wheelDir > 0) {
-                bodyScroll('prev', function() {
-                    scrollFlag = true;
-                });
-                //找到前一个按钮添加选中样式
-                btnActive = $('.scroll-control li.active').prev();
-                addBtnActive(btnActive);
-            } else if (wheelDir < 0) {
-                bodyScroll('next', function() {
-                    scrollFlag = true;
-                });
-                //找到下一个按钮添加选中样式
-                btnActive = $('.scroll-control li.active').next();
-                //初始状态下直接取第二个按钮
-                if ($('.scroll-control li.active').length === 0) {
-                    btnActive = $('.scroll-control li').eq(1);
-                }
-                addBtnActive(btnActive);
+        if (wheelDir > 0 || wheelDirIE < 0) {
+            bodyScroll('next', function() {
+                scrollFlag = true;
+            });
+            //找到下一个按钮添加选中样式
+            btnActive = $('.scroll-control li.active').next();
+            //初始状态下直接取第二个按钮
+            if ($('.scroll-control li.active').length === 0) {
+                btnActive = $('.scroll-control li').eq(1);
             }
+            addBtnActive(btnActive);
+        } else if (wheelDir < 0 || wheelDirIE > 0) {
+            bodyScroll('prev', function() {
+                scrollFlag = true;
+            });
+            //找到前一个按钮添加选中样式
+            btnActive = $('.scroll-control li.active').prev();
+            addBtnActive(btnActive);
         }
-
 
     }
 
@@ -145,6 +121,7 @@ $(function() {
         var scrollTimer;
         if (typeof window.onmousewheel === 'object') {
             window.onmousewheel = function(event) {
+                //节流操作
                 clearTimeout(scrollTimer);
                 var e = event || window.event;
                 scrollTimer = setTimeout(function() {
@@ -157,7 +134,6 @@ $(function() {
 
     });
 
-
     //侧边圆形按钮
     $(function() {
         var btn = $('.scroll-control li');
@@ -165,6 +141,7 @@ $(function() {
         btn.hover(function() {
             $(this).addClass('hover')
                 .find('.dot').css('background-color','#fff');
+            //文字延迟显示(为了视觉效果)
             setTimeout(function() {
                 $('.scroll-control .hover')
                     .find('.circle').css('display', 'inline-block');
@@ -212,7 +189,7 @@ $(function() {
             $('.menu-list').width( $('.menu-list').width() + ele.width() );
         }
 
-        //菜单回退
+        //菜单回退动画封装
         function reset(ele,type,callBack) {
             var wid = ele.width();
             //判断类型(静态和动态变化)
@@ -261,7 +238,7 @@ $(function() {
                 reset( $('.sec-menu'), 'animate', function() {
                     reset( $('.fir-menu'), 'animate' )
                 } )
-            }else if (currentWidth <= 240) {
+            }else {
                 reset( $('.fir-menu'), 'animate' );
             }
 
@@ -271,11 +248,11 @@ $(function() {
         $('.fir-item').each(function(i, ele) {
             $(ele).mouseenter(function() {
                 //判断是否存有扩展3级菜单,有则回退
-                if ($('.menu-list').width() > 500) {
+                if ($('.menu-list').width() > 480) {
                     reset( $('.thi-menu'), 'animate' );
                 }
                 //判断扩展列表宽度
-                if ($('.menu-list').width() < 300) {
+                if ($('.menu-list').width() <= 240) {
                     updateListWidth( $('.sec-menu') );
                 }
                 //排他,显示选中一级菜单对应的二级菜单
@@ -316,7 +293,6 @@ $(function() {
 
     });
 
-
     //导航栏下拉菜单
     $(function() {
         var timer;
@@ -331,6 +307,7 @@ $(function() {
                 //记录当前li的位置和宽度
                 var distance = $(this).offset().left,
                     liWidth = $(this).outerWidth();
+                //条形方块移动并展开到相应位置
                 $('.head-nav .underline').stop().animate({
                     left: distance,
                     width: liWidth
@@ -350,7 +327,7 @@ $(function() {
         $('.head-nav').mouseleave(function() {
             clearTimeout(timer);
 
-            //讲当前菜单折叠
+            //将当前菜单折叠
             if (/.bind/.test(cssName)) {
                 var dropCss = "." + cssName.slice(6);
                 $(dropCss).slideUp();

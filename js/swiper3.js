@@ -10,7 +10,7 @@ $(function () {
     //     })
     // }
     //点击点击第三张图片正常运行
-    var drat = $(".oul").width() / 2
+    var drat = $(".oul").width() / 2;
     if ($(".computer").width() >= drat) {
         $(".road-three").click(function () {
             $(".road-three").animate({
@@ -64,20 +64,25 @@ $(function () {
     $(".road-four").click(function () {
         //当带有computer的元素宽度不等于0,执行
         if ($(".computer").width() != 0) {
+            //箭头翻转
             $(this).children("p").css({
                 "transform": "rotateY(180deg)",
-                "transition": "0.5s"
+                "transition": "0.3s"
             });
+            //第二页第一块展开
             $(".road-three").animate({
                 width: '50%'
             }, function () {
+                //短标题消失
                 $(this).find(".ten").css({
                     "display": "none"
                 });
+                //详细描述出现
                 $(this).find(".first").css({
                     "display": "inline-block"
                 })
             });
+
             $(".run-left").animate({
                 width: 0
             }, function () {
@@ -93,7 +98,7 @@ $(function () {
         else {
             $(this).children("p").css({
                 "transform": "rotateY(360deg)",
-                "transition": "0.5s"
+                "transition": "0.3s"
             });
             $(".computer").css({
                 "display": "inline-block"
