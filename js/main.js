@@ -88,24 +88,34 @@ $(function() {
 
     //窗口缩放
     function navResize() {
+        //重置模块高度
+        for (var i = 0; i < $('.swiper-box>div').length; i++) {
+            $('.swiper-box>div').eq(i).height($(window).height());
+        }
+        var currentIndex = $('.scroll-control li.active').index();
+        var boxHeight = $(window).height();
+        if (boxHeight <= 530) {
+            boxHeight = 530;
+        }
+        $('body').css('top', -boxHeight * currentIndex);
         //窗口宽度1400px为临界值进行判断
         if ($(window).width() <= 1400) {
-            $('.header .head-nav .nav-list li').each(function(i, li) {
+            $('.header .head-nav .nav-list>li').each(function(i, li) {
                 //窗口缩小则后几个导航隐藏
                 if (i >= 4) {
                     $(li).css('display','none');
                 }
             });
             //归为更多
-            $('.header .head-nav .nav-list li').eq(-1).css('display','inline-block');
+            $('.header .head-nav .nav-list>li').eq(-1).css('display','inline-block');
         }else {
-            $('.header .head-nav .nav-list li').each(function(i, li) {
+            $('.header .head-nav .nav-list>li').each(function(i, li) {
                 if (i >= 5) {
                     $(li).css('display','inline-block');
                 }
             });
             //更多按钮隐藏
-            $('.header .head-nav .nav-list li').eq(-1).css('display','none');
+            $('.header .head-nav .nav-list>li').eq(-1).css('display','none');
         }
 
         $('.swiper-box .swiper7').height($(window).height());
@@ -298,7 +308,7 @@ $(function() {
         var timer;
         var cssName;
 
-        $('.head-nav .nav-list li').each(function() {
+        $('.head-nav .nav-list>li').each(function() {
 
             $(this).mouseenter(function() {
                 clearTimeout(timer);

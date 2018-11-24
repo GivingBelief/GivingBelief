@@ -284,6 +284,7 @@ header .dropdown .items .title a:hover
     position: absolute;
     bottom: 0;
     left: 290px;
+    z-index: -1;
 }
 
 .header .head-nav .nav-list {
@@ -295,6 +296,10 @@ header .dropdown .items .title a:hover
     height: 60px;
     line-height: 60px;
     padding: 0 15px;
+}
+
+.header .head-nav .nav-list .bind-more {
+    position: relative;
 }
 
 .header .user {
@@ -468,6 +473,27 @@ header .dropdown .items .title a:hover
 
 .dropdown .items .row .mb {
     border-bottom: 1px solid #5d5f60;
+}
+
+.dropdown .more {
+    position: absolute;
+    top: 0;
+    left: 578px;
+}
+
+.dropdown .more .more-list {
+    width: 150px;
+    height: 300%;
+    background-color: #222;
+}
+.dropdown .more .more-list li {
+    width: 100%;
+    height: 25%;
+    line-height: 45px;
+    padding: 0;
+}
+.dropdown .more .more-list a {
+    padding: 0 20px;
 }
 
 /*endregion*/
