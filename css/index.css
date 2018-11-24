@@ -692,6 +692,7 @@ header .dropdown .items .title a:hover
     position: relative;
     width: 100%;
     height: 200%;
+    overflow-x: hidden;
 }
 
 .swiper1, .swiper2, .swiper3,

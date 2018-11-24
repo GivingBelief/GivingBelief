@@ -12,9 +12,9 @@ $(function() {
 
         //判断参数值
         if (count === 'next') {
-            targetTop = $('body').offset().top -scrollTop;
+            targetTop = $('.swiper-box').offset().top -scrollTop;
         }else if (count === 'prev') {
-            targetTop = $('body').offset().top + scrollTop;
+            targetTop = $('.swiper-box').offset().top + scrollTop;
         }else {
             targetTop = (-scrollTop * count);
         }
@@ -26,7 +26,7 @@ $(function() {
             targetTop = 0;
             $('.header').addClass('nav-shadow')
         }
-        $('body').animate({top: targetTop}, 800, function() {
+        $('.swiper-box').animate({top: targetTop}, 800, function() {
             if (callBack) callBack();
         });
 
@@ -97,7 +97,7 @@ $(function() {
         if (boxHeight <= 530) {
             boxHeight = 530;
         }
-        $('body').css('top', -boxHeight * currentIndex);
+        $('.swiper-box').css('top', -boxHeight * currentIndex);
         //窗口宽度1400px为临界值进行判断
         if ($(window).width() <= 1400) {
             $('.header .head-nav .nav-list>li').each(function(i, li) {
@@ -129,17 +129,32 @@ $(function() {
 
         //鼠标滚动监听兼容处理
         var scrollTimer;
-        if (typeof window.onmousewheel === 'object') {
-            window.onmousewheel = function(event) {
-                //节流操作
-                clearTimeout(scrollTimer);
-                var e = event || window.event;
-                scrollTimer = setTimeout(function() {
-                    addMouseWheelListener(e);
-                }, 300);
-            }
-        }else {
-            document.addEventListener('DOMMouseScroll', addMouseWheelListener, false);
+        var obody = $('.swiper-box')[0];
+        // if (typeof window.onmousewheel === 'object') {
+        //     window.onmousewheel = function(event) {
+        //         //节流操作
+        //         console.log(event.currentTarget);
+        //         clearTimeout(scrollTimer);
+        //         var e = event || window.event;
+        //         scrollTimer = setTimeout(function() {
+        //             addMouseWheelListener(e);
+        //         }, 300);
+        //     }
+        // }else {
+        //     document.addEventListener('DOMMouseScroll', addMouseWheelListener, false);
+        // }
+        var roll = function(event) {
+            clearTimeout(scrollTimer);
+            var e = event || window.event;
+            scrollTimer = setTimeout(function() {
+                addMouseWheelListener(e);
+            }, 300);
+        };
+        if (window.addEventListener) {
+            obody.addEventListener('mousewheel', roll);
+            obody.addEventListener('DOMMouseScroll', roll);
+        }else if (window.attachEvent) {
+            obody.attachEvent('onmousewheel', roll);
         }
 
     });
@@ -325,6 +340,7 @@ $(function() {
 
                 //判断是否有下拉菜单,有则下拉
                 timer = setTimeout(function() {
+                    $('.dropdown .items').css('max-height', $(window).height());
                     cssName = "." + $(self).attr('class');
                     if (/bind/.test(cssName)) {
                         var dropCss = "." + cssName.slice(6);
